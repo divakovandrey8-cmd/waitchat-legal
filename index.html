@@ -70,8 +70,8 @@
       <div class="kicker">WaitChat</div>
       <h1 class="ru">Документы</h1>
       <h1 class="en">Legal</h1>
-      <p class="meta ru">Администрация WaitChat · Минск, Беларусь · 16+ · 12 сентября 2026</p>
-      <p class="meta en">WaitChat Administration · Minsk, Belarus · 16+ · 12 September 2026</p>
+      <p class="meta ru">Администрация WaitChat · Минск, Беларусь · 16+ · 27 сентября 2026</p>
+      <p class="meta en">WaitChat Administration · Minsk, Belarus · 16+ · 27 September 2026</p>
     </header>
 
     <div class="bar">
@@ -87,29 +87,46 @@
         <p>Эта страница объясняет, какие данные обрабатывает приложение WaitChat. Оператор — физическое лицо, которое разрабатывает приложение самостоятельно. В документах оно называется «Администрация WaitChat».</p>
         <p>Связь: <a href="mailto:divakovandrey8@gmail.com">divakovandrey8@gmail.com</a>. Место: Минск, Беларусь.</p>
 
+        <h3>Способы входа</h3>
+        <p>Вы можете создать аккаунт (логин и пароль) или войти как гость.</p>
+        <ul>
+          <li><strong>Гость</strong> — анонимный вход через Firebase: создаётся скрытый идентификатор аккаунта (UID) без вашего имени и личной почты.</li>
+          <li><strong>Аккаунт</strong> — вы выбираете логин и пароль. Для Firebase Authentication используется технический адрес вида <code>логин@waitchat.app</code>. Это не ваша личная электронная почта: мы не просим и не получаем ваш реальный email, телефон или паспорт.</li>
+        </ul>
+        <p>При создании аккаунта или входе поверх гостевой сессии данные гостя на устройстве и связанные с ним облачные данные могут быть удалены (wipe). Об этом предупреждает приложение перед подтверждением.</p>
+
         <h3>Что мы не собираем</h3>
-        <p>WaitChat не просит электронную почту, телефон, паспорт или платёжные данные. Вход выполняется анонимно через Firebase: приложение создаёт скрытый идентификатор аккаунта без имени и почты.</p>
+        <p>WaitChat не просит личную электронную почту, телефон, паспорт или платёжные данные.</p>
 
         <h3>Какие данные обрабатываются</h3>
         <ul>
-          <li>анонимный идентификатор Firebase (UID);</li>
+          <li>идентификатор Firebase (UID) и тип аккаунта (гость или пользователь);</li>
+          <li>логин (для зарегистрированного аккаунта) и служебная запись в реестре логинов;</li>
+          <li>технический идентификатор устройства (deviceId) для активности и обслуживания аккаунта;</li>
+          <li>время последней активности (lastActiveAt);</li>
           <li>код добавления в контакты;</li>
-          <li>ник и знак зодиака, если вы их указали;</li>
+          <li>ник, статус и знак зодиака, если вы их указали;</li>
           <li>список контактов и чёрный список;</li>
-          <li>сообщения, фото, заметки и связанные с ними условия;</li>
+          <li>сообщения, фото, заметки, реакции-смайлики на сообщениях и связанные условия открытия;</li>
+          <li>токен push-уведомлений (FCM), если уведомления доступны на устройстве;</li>
           <li>геолокация — только если вы сами ставите условие с картой; постоянное слежение не ведётся;</li>
-          <li>на устройстве: язык, обои и локальные настройки;</li>
+          <li>на устройстве: язык, обои, локальные настройки и факт принятия этой политики;</li>
           <li>если показана реклама Яндекса, у рекламной сети могут быть свои идентификаторы.</li>
         </ul>
 
         <h3>Зачем это нужно</h3>
-        <p>Данные нужны, чтобы работали аккаунт, поиск по коду, чаты, профиль и условия открытия сообщений. Мы не продаём ваши переписки.</p>
+        <p>Данные нужны, чтобы работали вход (гость или аккаунт), профиль, поиск по коду, чаты, реакции, уведомления, условия открытия сообщений и очистка неактивных аккаунтов. Мы не продаём ваши переписки.</p>
 
         <h3>Где хранится</h3>
-        <p>Облачные данные обрабатываются через Firebase (Google). Реклама может обрабатываться Яндексом. Часть настроек остаётся только на вашем устройстве.</p>
+        <p>Облачные данные обрабатываются через Firebase / Google (Authentication, Firestore, Storage, Cloud Messaging при наличии). Реклама может обрабатываться Яндексом. Часть настроек остаётся только на вашем устройстве.</p>
 
         <h3>Срок и удаление</h3>
-        <p>Данные хранятся, пока существует аккаунт. Удалить аккаунт можно в профиле приложения: тогда удаляются профиль, контакты и доступные переписки. Можно также написать на почту выше.</p>
+        <p>Данные хранятся, пока существует аккаунт, либо пока не сработает автоматическая очистка по неактивности:</p>
+        <ul>
+          <li>гость — около 10 дней без активности;</li>
+          <li>зарегистрированный аккаунт — около 30 дней без активности.</li>
+        </ul>
+        <p>Удалить аккаунт можно в профиле приложения: тогда удаляются профиль, контакты и доступные переписки. Можно также написать на почту выше.</p>
 
         <h3>Возраст</h3>
         <p>Приложение предназначено для лиц 16 лет и старше.</p>
@@ -120,29 +137,46 @@
         <p>This page explains what data the WaitChat app processes. The operator is a natural person who develops the app alone. In these documents they are called “WaitChat Administration”.</p>
         <p>Contact: <a href="mailto:divakovandrey8@gmail.com">divakovandrey8@gmail.com</a>. Place: Minsk, Belarus.</p>
 
+        <h3>Sign-in options</h3>
+        <p>You can create an account (login and password) or continue as a guest.</p>
+        <ul>
+          <li><strong>Guest</strong> — anonymous Firebase sign-in: a hidden account identifier (UID) is created without your name or personal email.</li>
+          <li><strong>Account</strong> — you choose a login and password. For Firebase Authentication we use a technical address like <code>login@waitchat.app</code>. This is not your personal email: we do not ask for or receive your real email, phone number, or passport.</li>
+        </ul>
+        <p>If you create an account or sign in over a guest session, guest data on the device and related cloud data may be wiped. The app warns you before you confirm.</p>
+
         <h3>What we do not collect</h3>
-        <p>WaitChat does not ask for email, phone number, passport, or payment details. Sign-in is anonymous via Firebase: the app creates a hidden account identifier without a name or email.</p>
+        <p>WaitChat does not ask for a personal email address, phone number, passport, or payment details.</p>
 
         <h3>What is processed</h3>
         <ul>
-          <li>anonymous Firebase identifier (UID);</li>
+          <li>Firebase identifier (UID) and account kind (guest or user);</li>
+          <li>login (for a registered account) and a technical login registry entry;</li>
+          <li>technical device identifier (deviceId) for activity and account maintenance;</li>
+          <li>last activity time (lastActiveAt);</li>
           <li>contact add-code;</li>
-          <li>nickname and zodiac sign, if you set them;</li>
+          <li>nickname, status, and zodiac sign, if you set them;</li>
           <li>contacts and block list;</li>
-          <li>messages, photos, notes, and related unlock conditions;</li>
+          <li>messages, photos, notes, emoji reactions on messages, and related unlock conditions;</li>
+          <li>push notification token (FCM), if notifications are available on the device;</li>
           <li>location only if you set a map condition yourself; there is no continuous tracking;</li>
-          <li>on-device language, wallpapers, and local settings;</li>
+          <li>on-device language, wallpapers, local settings, and acceptance of this policy;</li>
           <li>if a Yandex ad is shown, the ad network may use its own identifiers.</li>
         </ul>
 
         <h3>Why</h3>
-        <p>The data is used to run the account, code-based contact search, chats, profile, and message unlock conditions. We do not sell your conversations.</p>
+        <p>The data is used to run sign-in (guest or account), profile, code-based contact search, chats, reactions, notifications, message unlock conditions, and cleanup of inactive accounts. We do not sell your conversations.</p>
 
         <h3>Where it is stored</h3>
-        <p>Cloud data is processed via Firebase (Google). Ads may be processed by Yandex. Some settings stay only on your device.</p>
+        <p>Cloud data is processed via Firebase / Google (Authentication, Firestore, Storage, and Cloud Messaging when available). Ads may be processed by Yandex. Some settings stay only on your device.</p>
 
         <h3>Retention and deletion</h3>
-        <p>Data is kept while the account exists. You can delete the account in the app profile; this removes the profile, contacts, and available chats. You can also email the address above.</p>
+        <p>Data is kept while the account exists, or until automatic inactivity cleanup:</p>
+        <ul>
+          <li>guest — about 10 days without activity;</li>
+          <li>registered account — about 30 days without activity.</li>
+        </ul>
+        <p>You can delete the account in the app profile; this removes the profile, contacts, and available chats. You can also email the address above.</p>
 
         <h3>Age</h3>
         <p>The app is intended for people aged 16 and over.</p>
@@ -158,10 +192,14 @@
         <p>Сервис предоставляет Администрация WaitChat (физическое лицо, Минск, Беларусь), без команды и без юридического лица. Почта: <a href="mailto:divakovandrey8@gmail.com">divakovandrey8@gmail.com</a>.</p>
 
         <h3>Возраст</h3>
-        <p>Пользоваться приложением можно с 16 лет. Если вам меньше, не создавайте аккаунт.</p>
+        <p>Пользоваться приложением можно с 16 лет. Если вам меньше, не создавайте аккаунт и не входите как гость.</p>
+
+        <h3>Аккаунт и гость</h3>
+        <p>Вы отвечаете за сохранность логина и пароля. Не передавайте пароль другим людям. Гостевой режим удобен для быстрого старта, но неактивный гостевой аккаунт может быть удалён автоматически примерно через 10 дней. Зарегистрированный аккаунт при длительной неактивности может быть удалён примерно через 30 дней.</p>
+        <p>Переход с гостя на аккаунт может стереть гостевые данные — следуйте предупреждениям в приложении.</p>
 
         <h3>Ваш контент</h3>
-        <p>Вы сами отвечаете за тексты, фото и другие материалы, которые отправляете. Администрация WaitChat не является стороной ваших переписок и не обязана предварительно проверять сообщения.</p>
+        <p>Вы сами отвечаете за тексты, фото, реакции-смайлики и другие материалы, которые отправляете. Администрация WaitChat не является стороной ваших переписок и не обязана предварительно проверять сообщения.</p>
         <p>Запрещены спам, мошенничество, угрозы, незаконные материалы и попытки сломать сервис. Мы можем ограничить доступ или заблокировать аккаунт при нарушении.</p>
 
         <h3>Сервис «как есть»</h3>
@@ -172,7 +210,7 @@
         <p>Это не отменяет обязательные нормы закона, в том числе о персональных данных. Там, где закон не позволяет ограничить ответственность, она сохраняется в пределах этого закона.</p>
 
         <h3>Изменения</h3>
-        <p>Мы можем обновить эту страницу. Актуальная версия всегда на этом адресе. Дата текущей редакции: 12 сентября 2026.</p>
+        <p>Мы можем обновить эту страницу. Актуальная версия всегда на этом адресе. Дата текущей редакции: 27 сентября 2026.</p>
       </div>
 
       <div class="en">
@@ -183,10 +221,14 @@
         <p>The service is provided by WaitChat Administration (a natural person in Minsk, Belarus), with no team and no legal entity. Email: <a href="mailto:divakovandrey8@gmail.com">divakovandrey8@gmail.com</a>.</p>
 
         <h3>Age</h3>
-        <p>You must be 16 or older. If you are younger, do not create an account.</p>
+        <p>You must be 16 or older. If you are younger, do not create an account or continue as a guest.</p>
+
+        <h3>Account and guest</h3>
+        <p>You are responsible for keeping your login and password safe. Do not share your password. Guest mode is for a quick start, but an inactive guest account may be deleted automatically after about 10 days. A registered account may be deleted after about 30 days of inactivity.</p>
+        <p>Moving from guest to a registered account may wipe guest data — follow the in-app warnings.</p>
 
         <h3>Your content</h3>
-        <p>You are responsible for the texts, photos, and other materials you send. WaitChat Administration is not a party to your conversations and is not obliged to pre-screen messages.</p>
+        <p>You are responsible for the texts, photos, emoji reactions, and other materials you send. WaitChat Administration is not a party to your conversations and is not obliged to pre-screen messages.</p>
         <p>Spam, fraud, threats, unlawful material, and attempts to break the service are prohibited. We may limit access or block an account for violations.</p>
 
         <h3>As-is service</h3>
@@ -197,13 +239,16 @@
         <p>This does not override mandatory law, including personal-data rules. Where the law does not allow liability to be limited, liability remains within that law.</p>
 
         <h3>Changes</h3>
-        <p>We may update this page. The current version is always at this address. Date of this edition: 12 September 2026.</p>
+        <p>We may update this page. The current version is always at this address. Date of this edition: 27 September 2026.</p>
       </div>
     </section>
 
-    <footer class="ru">Это информационный текст, а не индивидуальная юридическая консультация.</footer>
-    <footer class="en">This is an informational text, not personal legal advice.</footer>
+    <footer>
+      <p class="ru">Это информационный текст, а не индивидуальная юридическая консультация.</p>
+      <p class="en">This is an informational text, not personal legal advice.</p>
+    </footer>
   </div>
+
   <script>
     const root = document.documentElement;
     const saved = localStorage.getItem("wc-lang");
