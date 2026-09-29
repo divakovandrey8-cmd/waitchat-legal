@@ -70,13 +70,14 @@
       <div class="kicker">WaitChat</div>
       <h1 class="ru">Документы</h1>
       <h1 class="en">Legal</h1>
-      <p class="meta ru">Администрация WaitChat · Минск, Беларусь · 16+ · 27 сентября 2026</p>
-      <p class="meta en">WaitChat Administration · Minsk, Belarus · 16+ · 27 September 2026</p>
+      <p class="meta ru">Администрация WaitChat · Минск, Беларусь · 16+ · 29 сентября 2026</p>
+      <p class="meta en">WaitChat Administration · Minsk, Belarus · 16+ · 29 September 2026</p>
     </header>
 
     <div class="bar">
       <a href="#privacy" id="nav-privacy">Политика</a>
       <a href="#terms" id="nav-terms">Условия</a>
+      <a href="#delete" id="nav-delete">Удаление</a>
       <button type="button" id="lang-ru">RU</button>
       <button type="button" id="lang-en">EN</button>
     </div>
@@ -102,7 +103,7 @@
         <ul>
           <li>идентификатор Firebase (UID) и тип аккаунта (гость или пользователь);</li>
           <li>логин (для зарегистрированного аккаунта) и служебная запись в реестре логинов;</li>
-          <li>технический идентификатор устройства (deviceId) для активности и обслуживания аккаунта;</li>
+          <li>технический идентификатор устройства (deviceId) для активности и обслуживания аккаунта (хранится в закрытой части профиля, другим пользователям недоступен);</li>
           <li>время последней активности (lastActiveAt);</li>
           <li>код добавления в контакты;</li>
           <li>ник, статус и знак зодиака, если вы их указали;</li>
@@ -110,15 +111,35 @@
           <li>сообщения, фото, заметки, реакции-смайлики на сообщениях и связанные условия открытия;</li>
           <li>токен push-уведомлений (FCM), если уведомления доступны на устройстве;</li>
           <li>геолокация — только если вы сами ставите условие с картой; постоянное слежение не ведётся;</li>
-          <li>на устройстве: язык, обои, локальные настройки и факт принятия этой политики;</li>
-          <li>если показана реклама Яндекса, у рекламной сети могут быть свои идентификаторы.</li>
+          <li>на устройстве: язык, обои, локальные настройки, факт принятия этой политики и ваш выбор по персонализированной рекламе;</li>
+          <li>жалобы, которые вы отправляете или которые отправлены на вас (см. «Жалобы и модерация»);</li>
+          <li>технические данные аналитики и рекламы (см. ниже).</li>
         </ul>
+
+        <h3>Аналитика</h3>
+        <p>В приложении работает Firebase Analytics (Google). Он автоматически собирает обезличенные технические данные: идентификатор установки приложения, модель устройства, версию Android, язык, примерную страну (по IP), время запусков и сессий, сбои. Эти данные нужны, чтобы понимать стабильность и использование приложения. Мы не передаём в аналитику тексты сообщений и фото.</p>
+
+        <h3>Реклама (Яндекс) и рекламный идентификатор</h3>
+        <p>В приложении показывается баннер Yandex Mobile Ads. Вместе с ним работает SDK AppMetrica (Яндекс). Рекламная сеть может обрабатывать рекламный идентификатор устройства (Google Advertising ID), модель устройства, версию ОС, IP-адрес, язык и данные о показах и нажатиях рекламы. При первом показе рекламы приложение спрашивает, согласны ли вы на персонализированную рекламу. Если вы отказались, показывается неперсонализированная реклама. Сбросить рекламный идентификатор или отключить персонализацию можно в настройках Android (Google → Реклама). Геолокацию рекламной сети приложение не передаёт.</p>
+
+        <h3>Микрофон</h3>
+        <ul>
+          <li><strong>Условие «Торт»</strong> — приложение слушает микрофон только пока открыт торт, чтобы измерить громкость (задуть свечи). Звук обрабатывается на устройстве, не записывается и никуда не отправляется.</li>
+          <li><strong>Условие «Голос»</strong> — используется системное распознавание речи Android (обычно сервис Google). Звук обрабатывает этот системный сервис по своим правилам; приложение получает только распознанный текст.</li>
+        </ul>
+        <p>Перед системным запросом разрешения приложение объясняет, зачем нужен микрофон.</p>
+
+        <h3>Геолокация и карты</h3>
+        <p>Геолокация запрашивается только когда вы сами создаёте или открываете условие с картой (или нажимаете «Моё место»). Координаты условия сохраняются в сообщении. Для показа карты и поиска мест координаты и поисковые запросы отправляются сторонним сервисам: Google Maps Static API (Google), серверам тайлов OpenStreetMap и геокодеру Nominatim (OpenStreetMap Foundation), а при нажатии «открыть в картах» — в приложение Google Карты. Постоянное слежение не ведётся, фоновая геолокация не используется.</p>
+
+        <h3>Жалобы и модерация</h3>
+        <p>Вы можете пожаловаться на сообщение или пользователя (меню сообщения → «Пожаловаться» или меню чата). В жалобе сохраняются: ваш UID, UID пользователя, на которого жалоба, идентификаторы чата и сообщения, копия текста сообщения или ссылка на фото, причина и время. Жалобы видит только Администрация WaitChat. Собеседник не узнаёт, кто пожаловался. По результатам проверки аккаунт нарушителя может быть заблокирован. Жалобы хранятся до 12 месяцев.</p>
 
         <h3>Зачем это нужно</h3>
         <p>Данные нужны, чтобы работали вход (гость или аккаунт), профиль, поиск по коду, чаты, реакции, уведомления, условия открытия сообщений и очистка неактивных аккаунтов. Мы не продаём ваши переписки.</p>
 
         <h3>Где хранится</h3>
-        <p>Облачные данные обрабатываются через Firebase / Google (Authentication, Firestore, Storage, Cloud Messaging при наличии). Реклама может обрабатываться Яндексом. Часть настроек остаётся только на вашем устройстве.</p>
+        <p>Облачные данные обрабатываются через Firebase / Google (Authentication, Firestore, Storage, Cloud Functions, Cloud Messaging, Analytics). Реклама и рекламная аналитика обрабатываются Яндексом (Yandex Mobile Ads, AppMetrica). Карты — Google и OpenStreetMap (см. выше). Серверы этих сервисов могут находиться за пределами вашей страны. Часть настроек остаётся только на вашем устройстве.</p>
 
         <h3>Срок и удаление</h3>
         <p>Данные хранятся, пока существует аккаунт, либо пока не сработает автоматическая очистка по неактивности:</p>
@@ -126,7 +147,7 @@
           <li>гость — около 10 дней без активности;</li>
           <li>зарегистрированный аккаунт — около 30 дней без активности.</li>
         </ul>
-        <p>Удалить аккаунт можно в профиле приложения: тогда удаляются профиль, контакты и доступные переписки. Можно также написать на почту выше.</p>
+        <p>Удалить аккаунт можно в самом приложении или запросом на почту — подробно в разделе <a href="#delete">«Удаление аккаунта»</a>.</p>
 
         <h3>Возраст</h3>
         <p>Приложение предназначено для лиц 16 лет и старше.</p>
@@ -152,7 +173,7 @@
         <ul>
           <li>Firebase identifier (UID) and account kind (guest or user);</li>
           <li>login (for a registered account) and a technical login registry entry;</li>
-          <li>technical device identifier (deviceId) for activity and account maintenance;</li>
+          <li>technical device identifier (deviceId) for activity and account maintenance (stored in a private part of the profile, not visible to other users);</li>
           <li>last activity time (lastActiveAt);</li>
           <li>contact add-code;</li>
           <li>nickname, status, and zodiac sign, if you set them;</li>
@@ -160,15 +181,35 @@
           <li>messages, photos, notes, emoji reactions on messages, and related unlock conditions;</li>
           <li>push notification token (FCM), if notifications are available on the device;</li>
           <li>location only if you set a map condition yourself; there is no continuous tracking;</li>
-          <li>on-device language, wallpapers, local settings, and acceptance of this policy;</li>
-          <li>if a Yandex ad is shown, the ad network may use its own identifiers.</li>
+          <li>on-device language, wallpapers, local settings, acceptance of this policy, and your personalized-ads choice;</li>
+          <li>reports you send or that are sent about you (see “Reports and moderation”);</li>
+          <li>technical analytics and advertising data (see below).</li>
         </ul>
+
+        <h3>Analytics</h3>
+        <p>The app uses Firebase Analytics (Google). It automatically collects pseudonymous technical data: app instance ID, device model, Android version, language, approximate country (from IP), app launches and sessions, crashes. We use it to understand app stability and usage. Message texts and photos are never sent to analytics.</p>
+
+        <h3>Ads (Yandex) and advertising ID</h3>
+        <p>The app shows a Yandex Mobile Ads banner, which includes the AppMetrica SDK (Yandex). The ad network may process the device advertising ID (Google Advertising ID), device model, OS version, IP address, language, and ad impression/click data. Before the first ad is loaded the app asks whether you agree to personalized ads. If you decline, non-personalized ads are shown. You can reset the advertising ID or opt out of personalization in Android settings (Google → Ads). The app does not pass your location to the ad network.</p>
+
+        <h3>Microphone</h3>
+        <ul>
+          <li><strong>“Cake” condition</strong> — the app listens to the microphone only while the cake is open, to measure loudness (blowing out candles). Sound is processed on the device, is not recorded, and is not sent anywhere.</li>
+          <li><strong>“Voice” condition</strong> — uses the Android system speech recognizer (usually a Google service). Audio is processed by that system service under its own terms; the app receives only the recognized text.</li>
+        </ul>
+        <p>Before the system permission prompt the app explains why the microphone is needed.</p>
+
+        <h3>Location and maps</h3>
+        <p>Location is requested only when you create or open a map condition yourself (or tap “My location”). The condition coordinates are stored in the message. To show the map and search places, coordinates and search queries are sent to third-party services: Google Maps Static API (Google), OpenStreetMap tile servers and the Nominatim geocoder (OpenStreetMap Foundation), and, if you tap “open in maps”, the Google Maps app. There is no continuous tracking and no background location.</p>
+
+        <h3>Reports and moderation</h3>
+        <p>You can report a message or a user (message menu → “Report”, or the chat menu). A report stores: your UID, the reported user’s UID, chat and message IDs, a copy of the message text or the photo link, the reason, and the time. Only WaitChat Administration sees reports. The other person is not told who reported them. After review, the violator’s account may be banned. Reports are kept for up to 12 months.</p>
 
         <h3>Why</h3>
         <p>The data is used to run sign-in (guest or account), profile, code-based contact search, chats, reactions, notifications, message unlock conditions, and cleanup of inactive accounts. We do not sell your conversations.</p>
 
         <h3>Where it is stored</h3>
-        <p>Cloud data is processed via Firebase / Google (Authentication, Firestore, Storage, and Cloud Messaging when available). Ads may be processed by Yandex. Some settings stay only on your device.</p>
+        <p>Cloud data is processed via Firebase / Google (Authentication, Firestore, Storage, Cloud Functions, Cloud Messaging, Analytics). Ads and ad analytics are processed by Yandex (Yandex Mobile Ads, AppMetrica). Maps: Google and OpenStreetMap (see above). Servers of these services may be located outside your country. Some settings stay only on your device.</p>
 
         <h3>Retention and deletion</h3>
         <p>Data is kept while the account exists, or until automatic inactivity cleanup:</p>
@@ -176,7 +217,7 @@
           <li>guest — about 10 days without activity;</li>
           <li>registered account — about 30 days without activity.</li>
         </ul>
-        <p>You can delete the account in the app profile; this removes the profile, contacts, and available chats. You can also email the address above.</p>
+        <p>You can delete your account in the app or by email request — see <a href="#delete">“Account deletion”</a>.</p>
 
         <h3>Age</h3>
         <p>The app is intended for people aged 16 and over.</p>
@@ -200,7 +241,16 @@
 
         <h3>Ваш контент</h3>
         <p>Вы сами отвечаете за тексты, фото, реакции-смайлики и другие материалы, которые отправляете. Администрация WaitChat не является стороной ваших переписок и не обязана предварительно проверять сообщения.</p>
-        <p>Запрещены спам, мошенничество, угрозы, незаконные материалы и попытки сломать сервис. Мы можем ограничить доступ или заблокировать аккаунт при нарушении.</p>
+        <p>Запрещены спам, мошенничество, угрозы, незаконные материалы и попытки сломать сервис.</p>
+        <p><strong>Нулевая терпимость.</strong> Строго запрещены и приводят к немедленной блокировке аккаунта без предупреждения:</p>
+        <ul>
+          <li>любые материалы сексуального насилия над детьми или сексуализирующие несовершеннолетних (CSAM) — такие случаи мы передаём в компетентные органы и организации;</li>
+          <li>сексуальный контент без согласия получателя, интимные изображения без согласия изображённого человека;</li>
+          <li>травля, преследование, угрозы, шантаж;</li>
+          <li>разжигание ненависти или призывы к насилию по признаку расы, национальности, религии, пола, сексуальной ориентации, инвалидности и т. п.;</li>
+          <li>пропаганда терроризма, торговля запрещёнными товарами.</li>
+        </ul>
+        <p><strong>Жалобы и блокировка.</strong> В приложении можно пожаловаться на сообщение или пользователя и заблокировать собеседника. Мы рассматриваем жалобы, можем удалить контент, ограничить отправку сообщений или удалить аккаунт нарушителя. Сообщить о нарушении можно также на почту выше.</p>
 
         <h3>Сервис «как есть»</h3>
         <p>WaitChat предоставляется бесплатно, в состоянии «как есть». Мы не обещаем непрерывную работу, сохранность каждого файла и отсутствие ошибок.</p>
@@ -210,7 +260,7 @@
         <p>Это не отменяет обязательные нормы закона, в том числе о персональных данных. Там, где закон не позволяет ограничить ответственность, она сохраняется в пределах этого закона.</p>
 
         <h3>Изменения</h3>
-        <p>Мы можем обновить эту страницу. Актуальная версия всегда на этом адресе. Дата текущей редакции: 27 сентября 2026.</p>
+        <p>Мы можем обновить эту страницу. Актуальная версия всегда на этом адресе. Дата текущей редакции: 29 сентября 2026.</p>
       </div>
 
       <div class="en">
@@ -229,7 +279,16 @@
 
         <h3>Your content</h3>
         <p>You are responsible for the texts, photos, emoji reactions, and other materials you send. WaitChat Administration is not a party to your conversations and is not obliged to pre-screen messages.</p>
-        <p>Spam, fraud, threats, unlawful material, and attempts to break the service are prohibited. We may limit access or block an account for violations.</p>
+        <p>Spam, fraud, threats, unlawful material, and attempts to break the service are prohibited.</p>
+        <p><strong>Zero tolerance.</strong> The following are strictly prohibited and lead to an immediate ban without warning:</p>
+        <ul>
+          <li>any child sexual abuse material or content sexualizing minors (CSAM) — we report such cases to the competent authorities and organizations;</li>
+          <li>sexual content sent without the recipient’s consent, intimate images shared without the depicted person’s consent;</li>
+          <li>harassment, stalking, threats, blackmail;</li>
+          <li>hate speech or incitement to violence based on race, ethnicity, religion, gender, sexual orientation, disability, etc.;</li>
+          <li>promotion of terrorism, sale of illegal goods.</li>
+        </ul>
+        <p><strong>Reports and blocking.</strong> In the app you can report a message or a user and block the other person. We review reports and may remove content, restrict sending messages, or delete the violator’s account. You can also report violations by email.</p>
 
         <h3>As-is service</h3>
         <p>WaitChat is provided free of charge, as is. We do not promise uninterrupted operation, that every file will be kept, or that there will be no errors.</p>
@@ -239,7 +298,89 @@
         <p>This does not override mandatory law, including personal-data rules. Where the law does not allow liability to be limited, liability remains within that law.</p>
 
         <h3>Changes</h3>
-        <p>We may update this page. The current version is always at this address. Date of this edition: 27 September 2026.</p>
+        <p>We may update this page. The current version is always at this address. Date of this edition: 29 September 2026.</p>
+      </div>
+    </section>
+
+    <section id="delete">
+      <div class="ru">
+        <h2>Удаление аккаунта и данных</h2>
+        <p>Эта страница — официальный способ запросить удаление аккаунта WaitChat и связанных с ним данных.</p>
+
+        <h3>Способ 1 — в приложении</h3>
+        <ol>
+          <li>Откройте WaitChat и войдите в аккаунт, который хотите удалить.</li>
+          <li>Откройте профиль и найдите блок аккаунта (логин, «Сменить пароль», «Выйти»).</li>
+          <li>Нажмите «Удалить аккаунт» и подтвердите удаление.</li>
+        </ol>
+        <p>Удаление выполняется сразу.</p>
+
+        <h3>Способ 2 — по почте (если приложения нет под рукой)</h3>
+        <p>Напишите на <a href="mailto:divakovandrey8@gmail.com?subject=WaitChat%20account%20deletion">divakovandrey8@gmail.com</a> с темой «Удаление аккаунта WaitChat» и укажите:</p>
+        <ul>
+          <li>ваш логин (для зарегистрированного аккаунта) <strong>или</strong> ваш код добавления в контакты (виден в профиле; для гостя — единственный способ);</li>
+          <li>по возможности — ник и примерную дату последнего входа, чтобы мы убедились, что аккаунт ваш.</li>
+        </ul>
+        <p>Мы можем попросить подтвердить владение аккаунтом. Запрос выполняется в течение 30 дней, обычно быстрее; мы ответим на письмо, когда удаление завершено.</p>
+
+        <h3>Что удаляется</h3>
+        <ul>
+          <li>аккаунт Firebase Authentication (логин и пароль больше не работают);</li>
+          <li>профиль: логин и запись в реестре логинов, ник, статус, знак зодиака, код, время активности, deviceId;</li>
+          <li>токен push-уведомлений;</li>
+          <li>контакты, чёрный список, отметки о прочтении, прогресс условий;</li>
+          <li>ваши переписки (чаты с сообщениями удаляются у обоих участников) и заметки;</li>
+          <li>фото, которые вы загрузили (Firebase Storage).</li>
+        </ul>
+
+        <h3>Что может сохраниться</h3>
+        <ul>
+          <li>жалобы о нарушениях — до 12 месяцев, для безопасности пользователей;</li>
+          <li>технические журналы Google Cloud / Firebase — до 30 дней;</li>
+          <li>обезличенные данные аналитики (Firebase Analytics, AppMetrica) — по правилам этих сервисов, без связи с вашим логином;</li>
+          <li>настройки на устройстве — до удаления приложения или очистки его данных.</li>
+        </ul>
+        <p>Неактивные аккаунты удаляются автоматически: гость — примерно через 10 дней, зарегистрированный аккаунт — примерно через 30 дней без активности.</p>
+      </div>
+
+      <div class="en">
+        <h2>Account and data deletion</h2>
+        <p>This page is the official way to request deletion of a WaitChat account and its data.</p>
+
+        <h3>Option 1 — in the app</h3>
+        <ol>
+          <li>Open WaitChat and sign in to the account you want to delete.</li>
+          <li>Open your profile and find the account block (login, “Change password”, “Log out”).</li>
+          <li>Tap “Delete account” and confirm.</li>
+        </ol>
+        <p>Deletion happens immediately.</p>
+
+        <h3>Option 2 — by email (if you cannot use the app)</h3>
+        <p>Email <a href="mailto:divakovandrey8@gmail.com?subject=WaitChat%20account%20deletion">divakovandrey8@gmail.com</a> with the subject “WaitChat account deletion” and include:</p>
+        <ul>
+          <li>your login (registered account) <strong>or</strong> your contact add-code (shown in the profile; the only option for a guest);</li>
+          <li>if possible, your nickname and the approximate date of your last sign-in, so we can confirm the account is yours.</li>
+        </ul>
+        <p>We may ask you to confirm ownership. Requests are completed within 30 days, usually sooner; we reply once deletion is done.</p>
+
+        <h3>What is deleted</h3>
+        <ul>
+          <li>the Firebase Authentication account (login and password stop working);</li>
+          <li>the profile: login and login-registry entry, nickname, status, zodiac sign, add-code, activity time, deviceId;</li>
+          <li>the push notification token;</li>
+          <li>contacts, block list, read markers, condition progress;</li>
+          <li>your chats (chats with their messages are deleted for both participants) and notes;</li>
+          <li>photos you uploaded (Firebase Storage).</li>
+        </ul>
+
+        <h3>What may be kept</h3>
+        <ul>
+          <li>reports about violations — up to 12 months, for user safety;</li>
+          <li>technical Google Cloud / Firebase logs — up to 30 days;</li>
+          <li>pseudonymous analytics data (Firebase Analytics, AppMetrica) — under those services’ rules, not linked to your login;</li>
+          <li>on-device settings — until you uninstall the app or clear its data.</li>
+        </ul>
+        <p>Inactive accounts are deleted automatically: guest — after about 10 days, registered account — after about 30 days of inactivity.</p>
       </div>
     </section>
 
@@ -253,6 +394,8 @@
     const root = document.documentElement;
     const saved = localStorage.getItem("wc-lang");
     if (saved === "en" || saved === "ru") root.lang = saved;
+    const qsLang = new URLSearchParams(location.search).get("lang");
+    if (qsLang === "en" || qsLang === "ru") root.lang = qsLang;
 
     function sync() {
       const en = root.lang === "en";
@@ -260,9 +403,11 @@
       document.getElementById("lang-en").classList.toggle("active", en);
       document.getElementById("nav-privacy").textContent = en ? "Privacy" : "Политика";
       document.getElementById("nav-terms").textContent = en ? "Terms" : "Условия";
-      const hash = location.hash === "#terms" ? "#terms" : "#privacy";
+      document.getElementById("nav-delete").textContent = en ? "Delete account" : "Удаление";
+      const hash = (location.hash === "#terms" || location.hash === "#delete") ? location.hash : "#privacy";
       document.getElementById("nav-privacy").classList.toggle("active", hash === "#privacy");
       document.getElementById("nav-terms").classList.toggle("active", hash === "#terms");
+      document.getElementById("nav-delete").classList.toggle("active", hash === "#delete");
     }
 
     document.getElementById("lang-ru").onclick = () => { root.lang = "ru"; localStorage.setItem("wc-lang", "ru"); sync(); };
