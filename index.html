@@ -70,8 +70,8 @@
       <div class="kicker">WaitChat</div>
       <h1 class="ru">Документы</h1>
       <h1 class="en">Legal</h1>
-      <p class="meta ru">Диваков А. Л. · Минск, Беларусь · 16+ · редакция 4 · 24 октября 2026</p>
-      <p class="meta en">A. L. Divakov · Minsk, Belarus · 16+ · edition 4 · 24 October 2026</p>
+      <p class="meta ru">Диваков А. Л. · Минск, Беларусь · 16+ · редакция 5 · 10 ноября 2026</p>
+      <p class="meta en">A. L. Divakov · Minsk, Belarus · 16+ · edition 5 · 10 November 2026</p>
     </header>
 
     <div class="bar">
@@ -85,7 +85,7 @@
     <section id="privacy">
       <div class="ru">
         <h2>Политика конфиденциальности</h2>
-        <p>Эта политика объясняет, какие персональные данные обрабатывает приложение WaitChat, зачем, на каком основании, кому они передаются и какие у вас права. Редакция 4 от 24 октября 2026.</p>
+        <p>Эта политика объясняет, какие персональные данные обрабатывает приложение WaitChat, зачем, на каком основании, кому они передаются и какие у вас права. Редакция 5 от 10 ноября 2026.</p>
 
         <h3>Оператор</h3>
         <p>Оператор персональных данных — <strong>Диваков Андрей Леонидович</strong>, физическое лицо, Республика Беларусь, г. Минск. Он разрабатывает приложение самостоятельно, без команды и юридического лица; в документах он также называется «Администрация WaitChat».</p>
@@ -111,51 +111,58 @@
           <li>код добавления в контакты (код можно сменить; старый код резервируется примерно на 30 дней, затем освобождается);</li>
           <li>ник, статус и знак зодиака, если вы их указали, — их видят ваши контакты, участники общих вайб-зон и (если вы включили видимость) пользователи поиска собеседника;</li>
           <li>список контактов, чёрный список и отметки о прочтении (собеседник видит, что сообщение прочитано);</li>
-          <li>сообщения, фото, видео, открытки, заметки, реакции-смайлики и связанные условия открытия (в т.ч. прогресс выполнения условий);</li>
+          <li>сообщения, фото, видео, открытки, рисунки (условие «Нарисуй»), заметки, реакции-смайлики и связанные условия открытия (в т.ч. прогресс выполнения условий);</li>
           <li>данные вайб-зон и поиска собеседника (см. ниже);</li>
           <li>токен push-уведомлений (FCM), если уведомления разрешены на устройстве;</li>
-          <li>геолокация — только если вы сами ставите или открываете условие с картой;</li>
+          <li>геолокация — только если вы сами ставите или открываете условие с картой или условие «Скорость» (скорость считается на устройстве, координаты не сохраняются);</li>
           <li>на устройстве: язык, тема, обои, локальные настройки, факт принятия этой политики и ваш выбор по персонализированной рекламе;</li>
+          <li>служебные счётчики ограничений (число поисков, запросов на переписку, смен кода и просьб открыть сообщение за сутки) — для защиты от злоупотреблений;</li>
           <li>жалобы и блокировки (см. «Жалобы и модерация»);</li>
           <li>технические данные аналитики и рекламы (см. ниже).</li>
         </ul>
 
         <h3>Фото, видео, открытки и «одноразовые» сообщения</h3>
         <ul>
-          <li>Фото (до 10 МБ) и видео (MP4, до 50 МБ) вы выбираете в галерее устройства; приложение получает доступ только к выбранному файлу. Файл загружается в Firebase Storage и доступен только участникам чата или вайб-зоны.</li>
-          <li><strong>«Одноразовые» фото и видео</strong> скрываются у получателя после просмотра. Файл остаётся в хранилище, пока существует чат (или до удаления аккаунта). Получатель технически может сделать снимок экрана — не отправляйте то, что не готовы показать.</li>
-          <li><strong>Открытки</strong> — рисунок сохраняется как набор штрихов. Файлы открытки удаляются после того, как получатель её открыл, а неоткрытая открытка — примерно через 30 дней.</li>
+          <li>Фото (до 10 МБ) вы снимаете камерой или выбираете в галерее, видео (MP4, до 50 МБ) выбираете в галерее устройства; приложение получает доступ только к снятому или выбранному файлу. Файл загружается в Firebase Storage и доступен только участникам чата или вайб-зоны.</li>
+          <li><strong>«Одноразовые» фото и видео</strong> скрываются у получателя после просмотра. Файл остаётся в хранилище, пока существует чат (или до удаления аккаунта). На Android приложение запрещает снимки экрана во время просмотра, но это не гарантия: получатель технически может сфотографировать экран — не отправляйте то, что не готовы показать.</li>
+          <li><strong>Открытки</strong> — рисунок сохраняется как набор штрихов. Файлы открытки удаляются с сервера в течение суток после того, как получатель её открыл, а неоткрытая — примерно через 30 дней. Открытая открытка сохраняется в альбоме на устройстве до удаления чата или приложения.</li>
           <li>Обои чатов хранятся на устройстве. Обои вайб-зоны загружаются в хранилище зоны и видны её участникам.</li>
         </ul>
 
+        <h3>Условие «Нарисуй»</h3>
+        <p>Рисунок распознаётся моделью прямо на устройстве, без облачных сервисов. Рисунок (набор штрихов, до 4 КБ) отправляется на сервер, только когда вы угадали слово или просите отправителя открыть сообщение. В личном чате рисунок видят оба собеседника. Он хранится, пока существует сообщение. При отказе отправителя рисунок из просьбы удаляется. В вайб-зоне рисунок видит только автор сообщения. Он удаляется, когда вы выходите из зоны или вас удаляют из неё, а также при удалении сообщения, зоны или аккаунта. Отправителю приходит уведомление с текстом, без изображения. Чтобы ограничить злоупотребления, мы считаем число просьб (не больше 20 в сутки). Счётчик попыток хранится на устройстве и удаляется через 30 дней.</p>
+
         <h3>Вайб-зоны (групповые чаты)</h3>
         <p>Вайб-зона — групповой чат, в который входят по коду или заявке. В зоне хранятся: название, обои, код, список участников, модераторов и участников без права писать, заявки на вступление, сообщения и файлы. Участники зоны видят ваш ник, статус и ваши сообщения в зоне. Владелец и модераторы могут принимать заявки, ограничивать и удалять участников и сообщения.</p>
+        <p>Участники зоны могут открыть вашу карточку (ник, статус, знак зодиака, роль в зоне, без кода добавления) и отправить вам запрос на переписку. Запросы — и из зоны, и из поиска — хранятся до 7 дней.</p>
+        <p>В зоне можно создавать опросы «вайб-чек». Голос хранится вместе с вашим UID. В анонимном опросе другие участники не видят, кто как голосовал. В открытом опросе после показа итогов видно, кто за что голосовал. Если вы выходите из зоны или удаляете аккаунт, ваши голоса в незавершённых опросах удаляются. В завершённых опросах они остаются, пока существует зона, чтобы итоги не менялись.</p>
         <p>Если удалить зону, удаляются её сообщения, файлы, заявки и код. Если владелец удаляет аккаунт, зона переходит модератору, который остаётся её участником; если такого модератора нет, зона удаляется полностью — со всеми сообщениями, файлами, заявками и кодом.</p>
 
         <h3>Поиск собеседника (по желанию)</h3>
-        <p>Поиск выключен по умолчанию. Если вы сами включаете «Меня можно найти», мы сохраняем указанные вами пол и кого вы ищете, а также время активности. Ваши ник, статус и знак зодиака могут быть показаны случайным пользователям вместе с запросом на переписку. Запросы действуют ограниченное время и удаляются после истечения срока. Выключив видимость, вы сразу исчезаете из поиска. Заблокированные и неактивные пользователи в поиск не попадают.</p>
+        <p>Поиск выключен по умолчанию. Если вы сами включаете «Меня можно найти», мы сохраняем указанные вами пол и кого вы ищете, а также время активности. Ваши ник, статус и знак зодиака могут быть показаны случайным пользователям вместе с запросом на переписку. Запросы действуют до 7 дней и удаляются после истечения срока. Выключив видимость, вы сразу исчезаете из поиска. Заблокированные и неактивные (без активности больше 3 дней) пользователи в поиск не попадают.</p>
 
         <h3>Аналитика</h3>
-        <p>В приложении есть Firebase Analytics (Google). Он включается только после вашего согласия (см. «Реклама, статистика и согласие») и собирает псевдонимные технические данные: идентификатор установки приложения, модель устройства, версию Android, язык, примерную страну (по IP), время запусков и сессий. Эти данные нужны, чтобы понимать стабильность и использование приложения. Мы не передаём в аналитику тексты сообщений, фото и видео. Отдельного сервиса отчётов о сбоях (например, Crashlytics) нет.</p>
+        <p>Отдельной аналитики Firebase и сервиса отчётов о сбоях (например, Crashlytics) в приложении нет. Статистику показов рекламы собирает AppMetrica в составе рекламного SDK Яндекса (см. ниже).</p>
 
         <h3>Реклама, статистика и согласие</h3>
         <p>WaitChat бесплатный и показывает баннер Yandex Mobile Ads. Вместе с ним работает SDK AppMetrica (Яндекс). Рекламная сеть может обрабатывать рекламный идентификатор устройства (Google Advertising ID), модель устройства, версию ОС, IP-адрес, язык и данные о показах и нажатиях рекламы.</p>
-        <p>До вашего ответа рекламный SDK не запускается, а Firebase Analytics не собирает данные. Приложение один раз спрашивает, разрешаете ли вы персонализированную рекламу и сбор обезличенной статистики (Firebase Analytics, AppMetrica). Выбор действует для всех пользователей независимо от страны и передаётся в SDK Яндекса и Firebase при каждом запуске. Если вы отказались, показывается неперсонализированная реклама, а статистика не собирается. Изменить выбор или отозвать согласие можно в любой момент: Профиль → «Реклама и статистика». Также можно сбросить рекламный идентификатор или отключить персонализацию в настройках Android (Google → Реклама). Геолокацию рекламной сети приложение не передаёт.</p>
+        <p>До вашего ответа рекламный SDK не запускается. Приложение один раз спрашивает, разрешаете ли вы персонализированную рекламу и сбор обезличенной статистики (AppMetrica). Выбор действует для всех пользователей независимо от страны и передаётся в SDK Яндекса при каждом запуске. Если вы отказались, показывается неперсонализированная реклама, а статистика не собирается. Изменить выбор или отозвать согласие можно в любой момент: Профиль → «Реклама и статистика». Также можно сбросить рекламный идентификатор или отключить персонализацию в настройках Android (Google → Реклама). Геолокацию рекламной сети приложение не передаёт.</p>
 
         <h3>Микрофон, датчики и вибрация</h3>
         <ul>
-          <li><strong>Условие «Торт»</strong> — приложение слушает микрофон только пока открыт торт, чтобы измерить громкость (задуть свечи). Звук обрабатывается на устройстве, не записывается и никуда не отправляется.</li>
+          <li><strong>Условие «Торт»</strong> — приложение слушает микрофон только пока открыт торт, чтобы измерить громкость (задуть свечи). Звук обрабатывается на устройстве, не сохраняется и никуда не отправляется. Для замера громкости система может создать временный файл на устройстве, он сразу удаляется.</li>
+          <li><strong>Условие «Перекричать»</strong> — микрофон работает, только пока вы создаёте или открываете условие. В сообщении сохраняется только уровень громкости и длительность, звук не сохраняется и не отправляется. Для замера громкости система может создать временный файл на устройстве, он сразу удаляется.</li>
           <li><strong>Условие «Голос»</strong> — используется системное распознавание речи Android (обычно сервис Google). Звук обрабатывает этот системный сервис по своим правилам; приложение получает только распознанный текст.</li>
-          <li><strong>Акселерометр</strong> (условие «Тряска») — данные датчика обрабатываются только на устройстве и никуда не отправляются.</li>
+          <li><strong>Акселерометр, магнитометр, заряд батареи</strong> (условия «Встряска», «Наклон», «Лабиринт», компас в «Гео», «Заряд») — данные обрабатываются только на устройстве и никуда не отправляются; в сообщении хранится только заданный отправителем порог.</li>
           <li><strong>Вибрация</strong> используется для отклика интерфейса.</li>
         </ul>
         <p>Перед системным запросом разрешения приложение объясняет, зачем нужен микрофон.</p>
 
         <h3>Геолокация и карты</h3>
-        <p>Геолокация запрашивается только когда вы сами создаёте или открываете условие с картой (или нажимаете «Моё место»). Координаты условия сохраняются в сообщении. Для показа карты и поиска мест координаты и поисковые запросы отправляются сторонним сервисам: Google Maps Static API (Google), серверам тайлов OpenStreetMap и геокодеру Nominatim (OpenStreetMap Foundation), а при нажатии «открыть в картах» — в приложение Google Карты. Постоянное слежение не ведётся, фоновая геолокация не используется.</p>
+        <p>Геолокация запрашивается только когда вы сами создаёте или открываете условие с картой (или нажимаете «Моё место») или условие «Скорость». Для «Скорости» скорость считается на устройстве, в сообщении хранится только заданное значение в км/ч, координаты не сохраняются. Координаты условия сохраняются в сообщении. Для показа карты и поиска мест координаты и поисковые запросы отправляются сторонним сервисам: Google Maps Static API (Google), серверам тайлов OpenStreetMap и геокодеру Nominatim (OpenStreetMap Foundation), а при нажатии «открыть в картах» — в приложение Google Карты. Постоянное слежение не ведётся, фоновая геолокация не используется.</p>
 
         <h3>Жалобы и модерация</h3>
-        <p>Вы можете пожаловаться на сообщение, пользователя, вайб-зону или участника зоны (меню сообщения → «Пожаловаться», меню чата или зоны). В жалобе сохраняются: ваш UID, UID пользователя, на которого жалоба, идентификаторы чата, зоны и сообщения, копия текста сообщения или ссылка на фото или видео, причина и время. Жалобы видит только оператор. Собеседник не узнаёт, кто пожаловался. Жалобы хранятся не дольше 12 месяцев.</p>
+        <p>Вы можете пожаловаться на сообщение, пользователя, вайб-зону или участника зоны (меню сообщения → «Пожаловаться», меню чата или зоны). В жалобе сохраняются: ваш UID, UID пользователя, на которого жалоба, идентификаторы чата, зоны и сообщения, копия текста сообщения или ссылка на фото или видео, причина, время, версия приложения, тип сообщения и название зоны. Жалобы видит только оператор. Собеседник не узнаёт, кто пожаловался. Жалобы хранятся не дольше 12 месяцев.</p>
         <p>Если по результатам проверки аккаунт заблокирован, сохраняется запись о блокировке (UID, причина, дата). Пока она действует, отправка сообщений и поиск собеседника недоступны. Запись хранится, пока блокировка не снята, в том числе после удаления аккаунта, чтобы предотвратить повторные нарушения.</p>
 
         <h3>Цели и правовые основания</h3>
@@ -163,24 +170,25 @@
           <li><strong>Работа сервиса</strong> (вход, профиль, контакты по коду, чаты, вайб-зоны, файлы, уведомления, условия открытия, очистка неактивных аккаунтов) — исполнение соглашения с вами (эти Условия использования) и ваше согласие, которое вы даёте кнопкой «Принять».</li>
           <li><strong>Поиск собеседника, геолокация, микрофон, персонализированная реклама</strong> — отдельное согласие: вы включаете функцию сами или отвечаете на запрос приложения или системы.</li>
           <li><strong>Безопасность и модерация</strong> (жалобы, блокировки, защита от злоупотреблений) — исполнение соглашения и законные интересы оператора и пользователей, а также требования закона.</li>
-          <li><strong>Аналитика</strong> — ваше согласие; <strong>неперсонализированная реклама</strong> — законный интерес в бесплатности сервиса (рекламный SDK запускается только после ответа на вопрос о согласии).</li>
+          <li><strong>Статистика (AppMetrica)</strong> — ваше согласие; <strong>неперсонализированная реклама</strong> — законный интерес в бесплатности сервиса (рекламный SDK запускается только после ответа на вопрос о согласии).</li>
         </ul>
         <p>Мы не продаём ваши переписки и не принимаем автоматических решений, которые порождают для вас юридические последствия.</p>
 
         <h3>Получатели и трансграничная передача</h3>
         <p>Данные обрабатывают по нашему поручению или как самостоятельные операторы:</p>
         <ul>
-          <li>Google (Firebase Authentication, Firestore, Storage, Cloud Functions, Cloud Messaging, Analytics; Google Maps);</li>
+          <li>Google (Firebase Authentication, Firestore, Storage, Cloud Functions, Cloud Messaging; Google Maps);</li>
           <li>ООО «Яндекс» и его аффилированные лица (Yandex Mobile Ads, AppMetrica);</li>
           <li>OpenStreetMap Foundation (карты, Nominatim).</li>
         </ul>
+        <p>Модель распознавания рисунков (Apache 2.0) и набор Quick, Draw! (Google, CC BY 4.0) работают локально на устройстве, данные им не передаются.</p>
         <p>Серверы Google находятся в основном в США и ЕС, серверы Яндекса — в России и других странах. Не во всех этих странах обеспечивается уровень защиты персональных данных, равный уровню в стране вашего проживания. Возможные риски: иной объём прав субъекта и возможный доступ государственных органов этих стран. Нажимая «Принять», вы соглашаетесь на такую трансграничную передачу. Без неё приложение работать не может.</p>
 
         <h3>Сроки хранения</h3>
         <ul>
           <li>данные аккаунта и переписки — пока существует аккаунт;</li>
           <li>автоматическая очистка по неактивности: гость — около 10 дней без активности, зарегистрированный аккаунт — около 30 дней;</li>
-          <li>открытки — до открытия, неоткрытые — около 30 дней;</li>
+          <li>открытки на сервере — до суток после открытия, неоткрытые — около 30 дней; открытая открытка в альбоме на устройстве — до удаления чата или приложения;</li>
           <li>прежний код добавления и код зоны — около 30 дней после смены;</li>
           <li>жалобы — 12 месяцев, затем удаляются автоматически; записи о блокировке — пока блокировка действует;</li>
           <li>служебная отметка об удалённом аккаунте (UID, время и статус удаления, без ника, логина и переписок) — 12 месяцев после завершения удаления, затем удаляется автоматически;</li>
@@ -208,12 +216,12 @@
         <p>Приложение предназначено для лиц 16 лет и старше и не предназначено для детей. Если мы узнаем, что аккаунт принадлежит лицу младше 16 лет, мы удалим его.</p>
 
         <h3>Изменения политики</h3>
-        <p>При существенных изменениях приложение снова попросит принять документы. Текущая редакция — 4, от 24 октября 2026.</p>
+        <p>При существенных изменениях приложение снова попросит принять документы. Текущая редакция — 5, от 10 ноября 2026.</p>
       </div>
 
       <div class="en">
         <h2>Privacy Policy</h2>
-        <p>This policy explains what personal data the WaitChat app processes, why, on what legal basis, who receives it, and what rights you have. Edition 4 of 24 October 2026.</p>
+        <p>This policy explains what personal data the WaitChat app processes, why, on what legal basis, who receives it, and what rights you have. Edition 5 of 10 November 2026.</p>
 
         <h3>Controller</h3>
         <p>The data controller (operator) is <strong>Andrei Leonidovich Divakov (Диваков Андрей Леонидович)</strong>, a natural person, Minsk, Republic of Belarus. He develops the app alone, with no team and no legal entity; in these documents he is also called “WaitChat Administration”.</p>
@@ -239,51 +247,58 @@
           <li>contact add-code (you can change it; the old code is reserved for about 30 days, then released);</li>
           <li>nickname, status, and zodiac sign, if you set them — visible to your contacts, members of shared vibe zones and (if you turn visibility on) partner-search users;</li>
           <li>contacts, block list, and read markers (the other person sees that a message was read);</li>
-          <li>messages, photos, videos, postcards, notes, emoji reactions, and related unlock conditions (including condition progress);</li>
+          <li>messages, photos, videos, postcards, drawings (“Draw it” condition), notes, emoji reactions, and related unlock conditions (including condition progress);</li>
           <li>vibe zone and partner search data (see below);</li>
           <li>push notification token (FCM), if notifications are allowed on the device;</li>
-          <li>location only if you set or open a map condition yourself;</li>
+          <li>location only if you set or open a map or “Speed” condition yourself (speed is computed on the device; coordinates are not stored);</li>
           <li>on-device language, theme, wallpapers, local settings, acceptance of this policy, and your personalized-ads choice;</li>
+          <li>technical rate-limit counters (searches, chat requests, code changes and unlock requests per day) to prevent abuse;</li>
           <li>reports and bans (see “Reports and moderation”);</li>
           <li>technical analytics and advertising data (see below).</li>
         </ul>
 
         <h3>Photos, videos, postcards and view-once messages</h3>
         <ul>
-          <li>You pick photos (up to 10 MB) and videos (MP4, up to 50 MB) from the device gallery; the app only gets the file you chose. It is uploaded to Firebase Storage and is available only to members of that chat or vibe zone.</li>
-          <li><strong>View-once photos and videos</strong> are hidden for the recipient after viewing. The file stays in storage while the chat exists (or until account deletion). The recipient can technically take a screenshot — do not send what you are not ready to show.</li>
-          <li><strong>Postcards</strong> are stored as a set of drawing strokes. Postcard files are deleted after the recipient opens it; an unopened postcard is deleted after about 30 days.</li>
+          <li>You take photos (up to 10 MB) with the camera or pick them from the gallery, and pick videos (MP4, up to 50 MB) from the device gallery; the app only gets the file you took or chose. It is uploaded to Firebase Storage and is available only to members of that chat or vibe zone.</li>
+          <li><strong>View-once photos and videos</strong> are hidden for the recipient after viewing. The file stays in storage while the chat exists (or until account deletion). On Android the app blocks screenshots while viewing, but this is not a guarantee: the recipient can technically photograph the screen — do not send what you are not ready to show.</li>
+          <li><strong>Postcards</strong> are stored as a set of drawing strokes. Postcard files are deleted from the server within a day after the recipient opens it; an unopened one after about 30 days. An opened postcard stays in the on-device album until the chat or the app is deleted.</li>
           <li>Chat wallpapers stay on the device. A vibe zone wallpaper is uploaded to the zone’s storage and visible to its members.</li>
         </ul>
 
+        <h3>“Draw it” condition</h3>
+        <p>The drawing is recognized by a model on the device itself, with no cloud services. The drawing (a set of strokes, up to 4 KB) is sent to the server only when you guess the word or ask the sender to unlock the message. In a private chat both participants see it, and it is kept as long as the message exists. If the sender declines, the drawing from the request is deleted. In a vibe zone only the message author sees the drawing. It is deleted when you leave or are removed from the zone, and when the message, the zone or the account is deleted. The sender gets a text-only notification, without the image. To prevent abuse we count requests (up to 20 a day). The try counter is kept on the device and deleted after 30 days.</p>
+
         <h3>Vibe zones (group chats)</h3>
         <p>A vibe zone is a group chat joined by code or request. A zone stores its name, wallpaper, code, lists of members, moderators and muted members, join requests, messages and files. Zone members see your nickname, status and your messages in the zone. The owner and moderators can accept requests, restrict and remove members and messages.</p>
+        <p>Zone members can open your card (nickname, status, zodiac sign, zone role; no add-code) and send you a chat request. Requests, from zones or search, are kept for up to 7 days.</p>
+        <p>Zones can run “vibe check” polls. Your vote is stored with your UID. In an anonymous poll other members do not see who voted for what; in an open poll, once results are shown, they can see who voted for what. If you leave the zone or delete your account, your votes in running polls are deleted; in finished polls they stay while the zone exists, so results do not change.</p>
         <p>Deleting a zone deletes its messages, files, requests and code. If the owner deletes their account, the zone passes to a moderator who is still a member; if there is no such moderator, the zone is deleted entirely, with all its messages, files, requests and code.</p>
 
         <h3>Partner search (optional)</h3>
-        <p>Partner search is off by default. If you turn on “I can be found”, we store the gender and who-you-are-looking-for you chose, plus activity time. Your nickname, status and zodiac sign may be shown to random users together with a chat request. Requests are valid for a limited time and are deleted when they expire. Turning visibility off removes you from search immediately. Banned and inactive users are not shown.</p>
+        <p>Partner search is off by default. If you turn on “I can be found”, we store the gender and who-you-are-looking-for you chose, plus activity time. Your nickname, status and zodiac sign may be shown to random users together with a chat request. Requests are valid for up to 7 days and are deleted when they expire. Turning visibility off removes you from search immediately. Banned and inactive users (no activity for more than 3 days) are not shown.</p>
 
         <h3>Analytics</h3>
-        <p>The app includes Firebase Analytics (Google). It is turned on only after your consent (see “Ads, analytics and consent”) and collects pseudonymous technical data: app instance ID, device model, Android version, language, approximate country (from IP), app launches and sessions. We use it to understand app stability and usage. Message texts, photos and videos are never sent to analytics. There is no separate crash-reporting service (such as Crashlytics).</p>
+        <p>The app has no Firebase Analytics and no crash-reporting service (such as Crashlytics). Ad statistics are collected by AppMetrica as part of the Yandex ad SDK (see below).</p>
 
         <h3>Ads, analytics and consent</h3>
         <p>WaitChat is free and shows a Yandex Mobile Ads banner, which includes the AppMetrica SDK (Yandex). The ad network may process the device advertising ID (Google Advertising ID), device model, OS version, IP address, language, and ad impression/click data.</p>
-        <p>Until you answer, the ad SDK does not start and Firebase Analytics collects nothing. The app asks once whether you allow personalized ads and pseudonymous usage statistics (Firebase Analytics, AppMetrica). The choice applies to all users regardless of country and is passed to the Yandex and Firebase SDKs on every launch. If you decline, non-personalized ads are shown and no statistics are collected. You can change your choice or withdraw consent at any time: Profile → “Ads and analytics”. You can also reset the advertising ID or opt out of personalization in Android settings (Google → Ads). The app does not pass your location to the ad network.</p>
+        <p>Until you answer, the ad SDK does not start. The app asks once whether you allow personalized ads and pseudonymous usage statistics (AppMetrica). The choice applies to all users regardless of country and is passed to the Yandex SDK on every launch. If you decline, non-personalized ads are shown and no statistics are collected. You can change your choice or withdraw consent at any time: Profile → “Ads and analytics”. You can also reset the advertising ID or opt out of personalization in Android settings (Google → Ads). The app does not pass your location to the ad network.</p>
 
         <h3>Microphone, sensors and vibration</h3>
         <ul>
-          <li><strong>“Cake” condition</strong> — the app listens to the microphone only while the cake is open, to measure loudness (blowing out candles). Sound is processed on the device, is not recorded, and is not sent anywhere.</li>
+          <li><strong>“Cake” condition</strong> — the app listens to the microphone only while the cake is open, to measure loudness (blowing out candles). Sound is processed on the device, is not stored, and is not sent anywhere. To measure loudness the system may create a temporary file on the device, which is deleted right away.</li>
+          <li><strong>“Outshout” condition</strong> — the microphone is on only while you create or open the condition. Only the loudness level and duration are stored in the message; audio is not kept or sent. To measure loudness the system may create a temporary file on the device, which is deleted right away.</li>
           <li><strong>“Voice” condition</strong> — uses the Android system speech recognizer (usually a Google service). Audio is processed by that system service under its own terms; the app receives only the recognized text.</li>
-          <li><strong>Accelerometer</strong> (“Shake” condition) — sensor data is processed only on the device and is not sent anywhere.</li>
+          <li><strong>Accelerometer, magnetometer, battery level</strong> (“Shake”, “Tilt”, “Maze”, the compass in “Geo”, “Battery”) — processed only on the device and not sent anywhere; the message stores only the threshold set by the sender.</li>
           <li><strong>Vibration</strong> is used for interface feedback.</li>
         </ul>
         <p>Before the system permission prompt the app explains why the microphone is needed.</p>
 
         <h3>Location and maps</h3>
-        <p>Location is requested only when you create or open a map condition yourself (or tap “My location”). The condition coordinates are stored in the message. To show the map and search places, coordinates and search queries are sent to third-party services: Google Maps Static API (Google), OpenStreetMap tile servers and the Nominatim geocoder (OpenStreetMap Foundation), and, if you tap “open in maps”, the Google Maps app. There is no continuous tracking and no background location.</p>
+        <p>Location is requested only when you create or open a map condition yourself (or tap “My location”) or a “Speed” condition. For “Speed”, speed is computed on the device and the message stores only the target value in km/h; coordinates are not stored. The condition coordinates are stored in the message. To show the map and search places, coordinates and search queries are sent to third-party services: Google Maps Static API (Google), OpenStreetMap tile servers and the Nominatim geocoder (OpenStreetMap Foundation), and, if you tap “open in maps”, the Google Maps app. There is no continuous tracking and no background location.</p>
 
         <h3>Reports and moderation</h3>
-        <p>You can report a message, a user, a vibe zone or a zone member (message menu → “Report”, chat or zone menu). A report stores: your UID, the reported user’s UID, chat, zone and message IDs, a copy of the message text or the photo/video link, the reason, and the time. Only the controller sees reports. The other person is not told who reported them. Reports are kept for no longer than 12 months.</p>
+        <p>You can report a message, a user, a vibe zone or a zone member (message menu → “Report”, chat or zone menu). A report stores: your UID, the reported user’s UID, chat, zone and message IDs, a copy of the message text or the photo/video link, the reason, the time, the app version, the message type and the zone name. Only the controller sees reports. The other person is not told who reported them. Reports are kept for no longer than 12 months.</p>
         <p>If an account is banned after review, a ban record (UID, reason, date) is kept; while it is active, sending messages and partner search are unavailable. The record is kept until the ban is lifted, including after account deletion, to prevent repeated abuse.</p>
 
         <h3>Purposes and legal bases</h3>
@@ -291,24 +306,25 @@
           <li><strong>Running the service</strong> (sign-in, profile, add-by-code contacts, chats, vibe zones, files, notifications, unlock conditions, inactive account cleanup) — performance of the agreement with you (these Terms of Use) and your consent given by tapping “Accept”.</li>
           <li><strong>Partner search, location, microphone, personalized ads</strong> — separate consent: you turn the feature on yourself or answer the app/system prompt.</li>
           <li><strong>Safety and moderation</strong> (reports, bans, abuse prevention) — performance of the agreement, legitimate interests of the controller and users, and legal obligations.</li>
-          <li><strong>Analytics</strong> — your consent; <strong>non-personalized ads</strong> — legitimate interest in keeping the service free (the ad SDK starts only after you answer the consent question).</li>
+          <li><strong>Statistics (AppMetrica)</strong> — your consent; <strong>non-personalized ads</strong> — legitimate interest in keeping the service free (the ad SDK starts only after you answer the consent question).</li>
         </ul>
         <p>We do not sell your conversations and do not make automated decisions that produce legal effects for you.</p>
 
         <h3>Recipients and international transfers</h3>
         <p>Data is processed on our behalf or as independent controllers by:</p>
         <ul>
-          <li>Google (Firebase Authentication, Firestore, Storage, Cloud Functions, Cloud Messaging, Analytics; Google Maps);</li>
+          <li>Google (Firebase Authentication, Firestore, Storage, Cloud Functions, Cloud Messaging; Google Maps);</li>
           <li>Yandex LLC and its affiliates (Yandex Mobile Ads, AppMetrica);</li>
           <li>OpenStreetMap Foundation (maps, Nominatim).</li>
         </ul>
+        <p>The drawing recognition model (Apache 2.0) and the Quick, Draw! dataset (Google, CC BY 4.0) work locally on the device; no data is sent to them.</p>
         <p>Google servers are mainly in the USA and the EU; Yandex servers are in Russia and other countries. Not all of these countries ensure a level of data protection equal to that of your country of residence. Possible risks: a different set of data subject rights and possible access by public authorities of those countries. By tapping “Accept” you consent to such international transfer; without it the app cannot work.</p>
 
         <h3>Retention</h3>
         <ul>
           <li>account data and chats — while the account exists;</li>
           <li>automatic inactivity cleanup: guest — about 10 days without activity, registered account — about 30 days;</li>
-          <li>postcards — until opened; unopened — about 30 days;</li>
+          <li>postcards on the server — up to a day after opening; unopened — about 30 days; an opened postcard in the on-device album — until the chat or the app is deleted;</li>
           <li>a previous add-code or zone code — about 30 days after a change;</li>
           <li>reports — 12 months, then deleted automatically; ban records — while the ban is active;</li>
           <li>a technical deleted-account marker (UID, time and status of deletion; no nickname, login or chats) — 12 months after deletion is completed, then deleted automatically;</li>
@@ -336,7 +352,7 @@
         <p>The app is intended for people aged 16 and over and is not directed at children. If we learn that an account belongs to someone under 16, we will delete it.</p>
 
         <h3>Changes to this policy</h3>
-        <p>After significant changes the app will ask you to accept the documents again. Current edition: 4, of 24 October 2026.</p>
+        <p>After significant changes the app will ask you to accept the documents again. Current edition: 5, of 10 November 2026.</p>
       </div>
     </section>
 
@@ -356,7 +372,7 @@
         <p>Переход с гостя на аккаунт может стереть гостевые данные — следуйте предупреждениям в приложении.</p>
 
         <h3>Ваш контент</h3>
-        <p>Вы сами отвечаете за тексты, фото, видео, открытки, реакции-смайлики и другие материалы, которые отправляете. Администрация WaitChat не является стороной ваших переписок и не обязана предварительно проверять сообщения.</p>
+        <p>Вы сами отвечаете за тексты, фото, видео, открытки, рисунки, опросы, реакции-смайлики и другие материалы, которые отправляете. Администрация WaitChat не является стороной ваших переписок и не обязана предварительно проверять сообщения.</p>
         <p>Запрещены спам, мошенничество, угрозы, незаконные материалы и попытки сломать сервис.</p>
         <p><strong>Нулевая терпимость.</strong> Строго запрещены и приводят к немедленной блокировке аккаунта без предупреждения:</p>
         <ul>
@@ -368,8 +384,11 @@
         </ul>
         <p><strong>Жалобы и блокировка.</strong> В приложении можно пожаловаться на сообщение или пользователя и заблокировать собеседника. Мы рассматриваем жалобы, можем удалить контент, ограничить отправку сообщений или удалить аккаунт нарушителя. Сообщить о нарушении можно также на почту выше. Обычно мы рассматриваем жалобы в течение нескольких дней, а жалобы о CSAM и угрозах жизни — в приоритетном порядке. Если вы не согласны с блокировкой, напишите на почту: мы пересмотрим решение.</p>
 
+        <h3>Условия открытия</h3>
+        <p>Условия открытия (код, таймер, «Нарисуй» и другие) — игровая механика, а не средство защиты информации. Часть проверок выполняется на устройстве получателя, поэтому не используйте условия для защиты секретов. Если ваше слово в «Нарисуй» придумано вами, решение об открытии принимаете вы сами.</p>
+
         <h3>Вайб-зоны и поиск собеседника</h3>
-        <p>Владелец и модераторы вайб-зоны отвечают за порядок в ней и могут удалять сообщения и участников. Правила выше действуют и в зонах; на нарушения в зоне можно пожаловаться нам.</p>
+        <p>Владелец и модераторы вайб-зоны отвечают за порядок в ней и могут удалять сообщения и участников. Правила выше действуют и в зонах; на нарушения в зоне можно пожаловаться нам. Участники зоны могут писать вам запросы на переписку; неприемлемые запросы можно заблокировать и пожаловаться. Создатель опроса выбирает, анонимный он или нет.</p>
         <p>Поиск собеседника включается только вами. Он соединяет вас с незнакомыми людьми — будьте осторожны, не передавайте личные данные и деньги, о навязчивом поведении сообщайте жалобой и блокируйте собеседника.</p>
 
         <h3>Сервис «как есть»</h3>
@@ -383,7 +402,7 @@
         <p>К этим условиям применяется право Республики Беларусь. Это не лишает потребителей из других стран (в т.ч. России и ЕС) защиты, которую дают обязательные нормы их страны. Споры мы сначала стараемся решить перепиской по почте.</p>
 
         <h3>Изменения</h3>
-        <p>Мы можем обновить эту страницу. Актуальная версия всегда на этом адресе. При существенных изменениях приложение снова попросит принять документы. Текущая редакция — 4, от 24 октября 2026.</p>
+        <p>Мы можем обновить эту страницу. Актуальная версия всегда на этом адресе. При существенных изменениях приложение снова попросит принять документы. Текущая редакция — 5, от 10 ноября 2026.</p>
       </div>
 
       <div class="en">
@@ -401,7 +420,7 @@
         <p>Moving from guest to a registered account may wipe guest data — follow the in-app warnings.</p>
 
         <h3>Your content</h3>
-        <p>You are responsible for the texts, photos, videos, postcards, emoji reactions, and other materials you send. WaitChat Administration is not a party to your conversations and is not obliged to pre-screen messages.</p>
+        <p>You are responsible for the texts, photos, videos, postcards, drawings, polls, emoji reactions, and other materials you send. WaitChat Administration is not a party to your conversations and is not obliged to pre-screen messages.</p>
         <p>Spam, fraud, threats, unlawful material, and attempts to break the service are prohibited.</p>
         <p><strong>Zero tolerance.</strong> The following are strictly prohibited and lead to an immediate ban without warning:</p>
         <ul>
@@ -413,8 +432,11 @@
         </ul>
         <p><strong>Reports and blocking.</strong> In the app you can report a message or a user and block the other person. We review reports and may remove content, restrict sending messages, or delete the violator’s account. You can also report violations by email. We usually review reports within a few days; reports about CSAM or threats to life are handled first. If you disagree with a ban, email us and we will review the decision.</p>
 
+        <h3>Unlock conditions</h3>
+        <p>Unlock conditions (code, timer, “Draw it” and others) are a game mechanic, not a security measure. Some checks run on the recipient’s device, so do not use conditions to protect secrets. If you set your own word in “Draw it”, you decide yourself whether to unlock.</p>
+
         <h3>Vibe zones and partner search</h3>
-        <p>The owner and moderators of a vibe zone keep order in it and may remove messages and members. The rules above also apply in zones; you can report violations in a zone to us.</p>
+        <p>The owner and moderators of a vibe zone keep order in it and may remove messages and members. The rules above also apply in zones; you can report violations in a zone to us. Zone members can send you chat requests; block and report unwanted ones. The poll creator chooses whether a poll is anonymous.</p>
         <p>Partner search is turned on only by you. It connects you with strangers — be careful, do not share personal data or money, report harassing behavior and block the person.</p>
 
         <h3>As-is service</h3>
@@ -428,7 +450,7 @@
         <p>These terms are governed by the law of the Republic of Belarus. This does not deprive consumers in other countries (including Russia and the EU) of the protection given by mandatory rules of their country. We first try to resolve disputes by email.</p>
 
         <h3>Changes</h3>
-        <p>We may update this page. The current version is always at this address. After significant changes the app will ask you to accept the documents again. Current edition: 4, of 24 October 2026.</p>
+        <p>We may update this page. The current version is always at this address. After significant changes the app will ask you to accept the documents again. Current edition: 5, of 10 November 2026.</p>
       </div>
     </section>
 
@@ -462,7 +484,8 @@
           <li>ваши переписки (чаты с сообщениями удаляются у обоих участников) и заметки;</li>
           <li>фото, видео и открытки, которые вы загрузили (Firebase Storage);</li>
           <li>ваши сообщения и заявки в вайб-зонах; вы удаляетесь из всех зон. Зона, которой вы владеете, переходит модератору (участнику зоны); если модератора нет, зона удаляется полностью вместе с сообщениями и файлами;</li>
-          <li>данные поиска собеседника и запросы на переписку.</li>
+          <li>данные поиска собеседника и запросы на переписку;</li>
+          <li>служебные счётчики ограничений (поиски, запросы на переписку, смены кода, просьбы открыть сообщение).</li>
         </ul>
 
         <h3>Что может сохраниться</h3>
@@ -471,7 +494,8 @@
           <li>запись о блокировке (если аккаунт был заблокирован) — пока блокировка действует;</li>
           <li>служебная отметка об удалении (UID, время и статус удаления, без ника, логина и переписок) — 12 месяцев;</li>
           <li>технические журналы Google Cloud / Firebase — до 30 дней;</li>
-          <li>обезличенные данные аналитики (Firebase Analytics, AppMetrica) — по правилам этих сервисов, без связи с вашим логином;</li>
+          <li>голоса в завершённых опросах вайб-зон (без ника) — пока существует зона;</li>
+          <li>обезличенные данные статистики (AppMetrica) — по правилам этих сервисов, без связи с вашим логином;</li>
           <li>настройки на устройстве — до удаления приложения или очистки его данных.</li>
         </ul>
         <p>Неактивные аккаунты удаляются автоматически: гость — примерно через 10 дней, зарегистрированный аккаунт — примерно через 30 дней без активности.</p>
@@ -506,7 +530,8 @@
           <li>your chats (chats with their messages are deleted for both participants) and notes;</li>
           <li>photos, videos and postcards you uploaded (Firebase Storage);</li>
           <li>your vibe zone messages and join requests; you are removed from all zones. A zone you own passes to a moderator (who is a zone member); if there is none, the zone is deleted entirely with its messages and files;</li>
-          <li>partner search data and chat requests.</li>
+          <li>partner search data and chat requests;</li>
+          <li>technical rate-limit counters (searches, chat requests, code changes, unlock requests).</li>
         </ul>
 
         <h3>What may be kept</h3>
@@ -515,7 +540,8 @@
           <li>a ban record (if the account was banned) — while the ban is active;</li>
           <li>a technical deletion marker (UID, time and status of deletion; no nickname, login or chats) — 12 months;</li>
           <li>technical Google Cloud / Firebase logs — up to 30 days;</li>
-          <li>pseudonymous analytics data (Firebase Analytics, AppMetrica) — under those services’ rules, not linked to your login;</li>
+          <li>votes in finished vibe-zone polls (no nickname) — while the zone exists;</li>
+          <li>pseudonymous statistics data (AppMetrica) — under those services’ rules, not linked to your login;</li>
           <li>on-device settings — until you uninstall the app or clear its data.</li>
         </ul>
         <p>Inactive accounts are deleted automatically: guest — after about 10 days, registered account — after about 30 days of inactivity.</p>
